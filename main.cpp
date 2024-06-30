@@ -54,7 +54,7 @@ void CreateObjects()
 	};
 
 	GLfloat vertices[] = {
-		// Base vertices
+		// Base vertices of the first pyramid
 		-1.0f, -1.0f, -1.0f, // Vertex 0: bottom left back
 		1.0f, -1.0f, -1.0f,  // Vertex 1: bottom right back
 		1.0f, -1.0f, 1.0f,   // Vertex 2: bottom right front
@@ -63,9 +63,37 @@ void CreateObjects()
 		0.0f, 1.0f, 0.0f     // Vertex 4: top
 	};
 
+	unsigned int indices2[] = {
+		// Sides of the pyramid
+		0, 4, 1, // Front-left face
+		1, 4, 2, // Front-right face
+		2, 4, 3, // Back-right face
+		3, 4, 0, // Back-left face
+		// Base of the pyramid
+		0, 1, 2, // First triangle of the base
+		2, 3, 0  // Second triangle of the base
+	};
+
+	GLfloat vertices2[] = {
+		// Base vertices of the second pyramid
+		-1.0f, 1.0f, -1.0f, // Vertex 0: top left back
+		1.0f, 1.0f, -1.0f,  // Vertex 1: top right back
+		1.0f, 1.0f, 1.0f,   // Vertex 2: top right front
+		-1.0f, 1.0f, 1.0f,  // Vertex 3: top left front
+		// Apex vertex
+		0.0f, -1.0f, 0.0f     // Vertex 4: bottom
+	};
+
+
+
 	Mesh* obj1 = new Mesh();
-	obj1->CreateMesh(vertices, indices, 12, 12);
+	obj1->CreateMesh(vertices, indices, 16, 18);
 	meshList.push_back(obj1);
+
+
+	Mesh* obj2 = new Mesh();
+	obj2->CreateMesh(vertices2, indices2, 16, 18);
+	meshList.push_back(obj2);
 }
 void CreateShaders()
 {
@@ -177,11 +205,19 @@ int main()
 
 		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -2.5f));
 		model = glm::scale(model, glm::vec3(0.4f, 0.4f, 1.0f));
-		
+
 		model = glm::rotate(model, curAngle * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
 		meshList[0]->RenderMesh();
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 1.0f, -2.5f));
+		//model = glm::translate(model, glm::vec3(0.0f, 0.8f, 0.0f)); // Move the base of obj2 up by 1 unit
+		model = glm::scale(model, glm::vec3(0.4f, 0.4f, 1.0f));
+		model = glm::rotate(model, curAngle * toRadians, glm::vec3(0.0f, -1.0f, 0.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		meshList[1]->RenderMesh();
 
 		glUseProgram(0);
 
