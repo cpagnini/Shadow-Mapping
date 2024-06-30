@@ -15,6 +15,11 @@
 
 // Window dimensions
 const GLint WIDTH = 800, HEIGHT = 600;
+//Input interaction variables
+bool keys[1024];
+GLfloat lastX, lastY, xChange, yChange;
+bool mouseFirstMoved;
+
 const float toRadians = 3.14159265f / 180.0f;
 
 std::vector<Mesh*> meshList;
@@ -102,9 +107,56 @@ void CreateShaders()
 	shaderList.push_back(*shader1);
 }
 
+static void handleMouse(GLFWwindow* window, double xPos, double yPos) {
+	if (mouseFirstMoved) {
+		lastX = xPos;
+		lastY = yPos;
+		mouseFirstMoved = false;
+	}
+	xChange = xPos - lastX;
+	yChange = lastY - yPos;
+
+	lastX = xPos;
+	lastY = yPos;
+}
+void InitialiseKeys() {
+	for (size_t i = 0; i < 1024; i++) {
+
+		keys[i] = 0;
+	}
+}
+
+static void handleKeys(GLFWwindow* window, int key, int code, int action, int mode) {
+
+	//theWindow = static_cast<Window*>(glfwGetWindowUserPointer(window));
+	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
+		glfwSetWindowShouldClose(window, GL_TRUE);
+	}
+	if (key >= 0 && key <= 1024) {
+		if (action == GLFW_PRESS) {
+			keys[key] = true;
+		}
+		else if (action == GLFW_RELEASE) {
+			keys[key] = false;
+		}
+	}
+}
+
+GLfloat getXChange() {
+	GLfloat theChange = xChange;
+	xChange = 0.0f;
+	return theChange;
+}
+GLfloat getYChange() {
+	GLfloat theChange = yChange;
+	yChange = 0.0f;
+	return theChange;
+}
+
+
 int main()
 {
-	
+	InitialiseKeys();
 
 	// Initialise GLFW
 	if (!glfwInit())
@@ -123,12 +175,18 @@ int main()
 		return 1;
 	}
 
+	
 	// Get Buffer Size information
 	int bufferWidth, bufferHeight;
 	glfwGetFramebufferSize(mainWindow, &bufferWidth, &bufferHeight);
 
 	// Set context for GLEW to use
 	glfwMakeContextCurrent(mainWindow);
+
+	glfwSetInputMode(mainWindow, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	//Callbacks
+	glfwSetKeyCallback(mainWindow, handleKeys);
+	glfwSetCursorPosCallback(mainWindow, handleMouse);
 
 	// Allow modern extension features
 	glewExperimental = GL_TRUE;
@@ -146,8 +204,7 @@ int main()
 	// Setup Viewport size
 	glViewport(0, 0, bufferWidth, bufferHeight);
 
-	/*CreateTriangle();
-	CompileShaders();*/
+	glfwSetWindowUserPointer(mainWindow,NULL);
 
 	CreateObjects();
 	CreateShaders();
@@ -213,7 +270,6 @@ int main()
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, 1.0f, -2.5f));
-		//model = glm::translate(model, glm::vec3(0.0f, 0.8f, 0.0f)); // Move the base of obj2 up by 1 unit
 		model = glm::scale(model, glm::vec3(0.4f, 0.4f, 1.0f));
 		model = glm::rotate(model, curAngle * toRadians, glm::vec3(0.0f, -1.0f, 0.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
