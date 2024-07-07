@@ -1,8 +1,9 @@
 ﻿  main.cpp
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(112,11): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(113,11): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(116,17): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(117,18): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(119,10): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(120,10): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(120,11): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(121,11): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(124,17): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(125,18): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(127,10): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(128,10): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(229,15): warning C4244: 'inizializzazione': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
   OpenGLCourse_1.0.vcxproj -> C:\VSProjects\Projects\OpenGLCourse_1.0\Debug\ShadowMapping.exe

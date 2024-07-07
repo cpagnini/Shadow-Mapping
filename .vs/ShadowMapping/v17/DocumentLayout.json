@@ -7,6 +7,22 @@
       "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Shader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:Shader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -22,11 +38,64 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Camera.cpp",
+              "DocumentMoniker": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Camera.cpp",
+              "RelativeDocumentMoniker": "Camera.cpp",
+              "ToolTip": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Camera.cpp",
+              "RelativeToolTip": "Camera.cpp",
+              "ViewState": "AQIAACgAAAAAAAAAAAAkwCsAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-07T15:23:14.783Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Shader.cpp",
+              "DocumentMoniker": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Shader.cpp",
+              "RelativeDocumentMoniker": "Shader.cpp",
+              "ToolTip": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Shader.cpp",
+              "RelativeToolTip": "Shader.cpp",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAE0AAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-07T15:44:46.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Shader.h",
+              "DocumentMoniker": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Shader.h",
+              "RelativeDocumentMoniker": "Shader.h",
+              "ToolTip": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Shader.h",
+              "RelativeToolTip": "Shader.h",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAB0AAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-07T15:44:10.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Camera.h",
+              "DocumentMoniker": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Camera.h",
+              "RelativeDocumentMoniker": "Camera.h",
+              "ToolTip": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Camera.h",
+              "RelativeToolTip": "Camera.h",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-07T15:15:07.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Mesh.h",
               "DocumentMoniker": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Mesh.h",
               "RelativeDocumentMoniker": "Mesh.h",
@@ -34,12 +103,11 @@
               "RelativeToolTip": "Mesh.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-30T15:45:31.408Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T15:45:31.408Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Mesh.cpp",
               "DocumentMoniker": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Mesh.cpp",
               "RelativeDocumentMoniker": "Mesh.cpp",
@@ -47,8 +115,7 @@
               "RelativeToolTip": "Mesh.cpp",
               "ViewState": "AQIAADAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-30T15:42:21.707Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T15:42:21.707Z"
             },
             {
               "$type": "Document",
@@ -58,7 +125,7 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AQIAAIcAAAAAAAAAAAAAAJgAAAASAAAA",
+              "ViewState": "AQIAANwAAAAAAAAAAAAkwOMAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-06-30T14:17:50.571Z",
               "EditorCaption": ""
