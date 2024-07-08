@@ -1,9 +1,20 @@
-﻿  main.cpp
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(120,11): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(121,11): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(124,17): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(125,18): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(127,10): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(128,10): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(229,15): warning C4244: 'inizializzazione': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-  OpenGLCourse_1.0.vcxproj -> C:\VSProjects\Projects\OpenGLCourse_1.0\Debug\ShadowMapping.exe
+﻿  Camera.cpp
+  Camera.h
+  main.cpp
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(122,11): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(123,11): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(126,17): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(127,18): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(129,10): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(130,10): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(231,15): warning C4244: 'inizializzazione': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+  Mesh.cpp
+  Shader.cpp
+  Texture.cpp
+  Window.cpp
+  Generazione del codice in corso...
+C:\VSProjects\Projects\OpenGLCourse_1.0\Window.cpp(64,1): warning C4715: 'Window::Initialise': non tutti i percorsi di controllo restituiscono un valore
+ShadowMapping\Debug\Camera.obj : warning LNK4042: oggetto specificato più di una volta; occorrenze supplementari ignorate
+LINK : warning LNK4098: la libreria predefinita 'MSVCRT' è in conflitto con l'utilizzo di altre librerie; usare /NODEFAULTLIB:libreria
+Texture.obj : error LNK2019: riferimento al simbolo esterno _stbi_load non risolto nella funzione "public: void __thiscall Texture::LoadTexture(void)" (?LoadTexture@Texture@@QAEXXZ)
+C:\VSProjects\Projects\OpenGLCourse_1.0\Debug\ShadowMapping.exe : fatal error LNK1120: 1 esterni non risolti

@@ -7,6 +7,18 @@
       "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Texture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:Texture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -23,10 +35,6 @@
       "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -38,11 +46,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Camera.cpp",
               "DocumentMoniker": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Camera.cpp",
               "RelativeDocumentMoniker": "Camera.cpp",
@@ -51,12 +59,36 @@
               "ViewState": "AQIAACgAAAAAAAAAAAAkwCsAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-07T15:23:14.783Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Texture.cpp",
+              "DocumentMoniker": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Texture.cpp",
+              "RelativeDocumentMoniker": "Texture.cpp",
+              "ToolTip": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Texture.cpp",
+              "RelativeToolTip": "Texture.cpp",
+              "ViewState": "AQIAABwAAAAAAAAAAAAwwC4AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-08T11:26:30.523Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Texture.h",
+              "DocumentMoniker": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Texture.h",
+              "RelativeDocumentMoniker": "Texture.h",
+              "ToolTip": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Texture.h",
+              "RelativeToolTip": "Texture.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-08T11:23:25.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Shader.cpp",
               "DocumentMoniker": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Shader.cpp",
               "RelativeDocumentMoniker": "Shader.cpp",
@@ -64,12 +96,11 @@
               "RelativeToolTip": "Shader.cpp",
               "ViewState": "AQIAAEIAAAAAAAAAAAAAAE0AAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-07T15:44:46.83Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T15:44:46.83Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Shader.h",
               "DocumentMoniker": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Shader.h",
               "RelativeDocumentMoniker": "Shader.h",
@@ -77,12 +108,11 @@
               "RelativeToolTip": "Shader.h",
               "ViewState": "AQIAABIAAAAAAAAAAAAAAB0AAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-07T15:44:10.67Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T15:44:10.67Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Camera.h",
               "DocumentMoniker": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Camera.h",
               "RelativeDocumentMoniker": "Camera.h",
@@ -90,12 +120,11 @@
               "RelativeToolTip": "Camera.h",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-07T15:15:07.081Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T15:15:07.081Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Mesh.h",
               "DocumentMoniker": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Mesh.h",
               "RelativeDocumentMoniker": "Mesh.h",
@@ -107,15 +136,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Mesh.cpp",
               "DocumentMoniker": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Mesh.cpp",
               "RelativeDocumentMoniker": "Mesh.cpp",
               "ToolTip": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Mesh.cpp",
               "RelativeToolTip": "Mesh.cpp",
-              "ViewState": "AQIAADAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACYAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-30T15:42:21.707Z"
+              "WhenOpened": "2024-06-30T15:42:21.707Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -125,7 +155,7 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AQIAANwAAAAAAAAAAAAkwOMAAAAsAAAA",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAEkAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-06-30T14:17:50.571Z",
               "EditorCaption": ""

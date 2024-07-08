@@ -1,8 +1,10 @@
+#define STB_IMAGE_IMPLEMENTATION
+
 #include <stdio.h>
 #include <string.h>
 #include <cmath>
 #include <vector>
-
+ 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
@@ -68,8 +70,8 @@ void CreateObjects()
 
 	GLfloat vertices[] = {
 		// Base vertices of the first pyramid
-		-1.0f, -1.0f, -1.0f, // Vertex 0: bottom left back
-		1.0f, -1.0f, -1.0f,  // Vertex 1: bottom right back
+		-1.0f, -1.0f, -1.0f, 0.0f, 0.0f, // Vertex 0: bottom left back
+		1.0f, -1.0f, -1.0f, 0.0f,0.0f, // Vertex 1: bottom right back
 		1.0f, -1.0f, 1.0f,   // Vertex 2: bottom right front
 		-1.0f, -1.0f, 1.0f,  // Vertex 3: bottom left front
 		// Apex vertex

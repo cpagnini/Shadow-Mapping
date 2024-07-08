@@ -33,6 +33,9 @@
     <ClCompile Include="Camera.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Mesh.h">
@@ -42,6 +45,9 @@
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="Window.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>
