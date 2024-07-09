@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Texture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:Texture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|solutionrelative:Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB2BC72C-1FD8-4C39-B8EA-4A553A7A3150}|OpenGLCourse_1.0.vcxproj|C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -63,28 +63,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Texture.cpp",
               "DocumentMoniker": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Texture.cpp",
               "RelativeDocumentMoniker": "Texture.cpp",
               "ToolTip": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Texture.cpp",
               "RelativeToolTip": "Texture.cpp",
-              "ViewState": "AQIAABwAAAAAAAAAAAAwwC4AAAApAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-08T11:26:30.523Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Texture.h",
               "DocumentMoniker": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Texture.h",
               "RelativeDocumentMoniker": "Texture.h",
               "ToolTip": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Texture.h",
               "RelativeToolTip": "Texture.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-08T11:23:25.351Z"
+              "WhenOpened": "2024-07-08T11:23:25.351Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -136,7 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Mesh.cpp",
               "DocumentMoniker": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\Mesh.cpp",
               "RelativeDocumentMoniker": "Mesh.cpp",
@@ -144,8 +145,7 @@
               "RelativeToolTip": "Mesh.cpp",
               "ViewState": "AQIAABIAAAAAAAAAAAAAACYAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-30T15:42:21.707Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T15:42:21.707Z"
             },
             {
               "$type": "Document",
@@ -155,7 +155,7 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AQIAADYAAAAAAAAAAAAAAEkAAAAgAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-06-30T14:17:50.571Z",
               "EditorCaption": ""
