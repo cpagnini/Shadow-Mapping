@@ -18,6 +18,7 @@
 #include "Camera.h"
 
 #include "Texture.h"
+#include "Light.h"
 
 // Window dimensions
 const GLint WIDTH = 800, HEIGHT = 600;
@@ -40,6 +41,9 @@ GLfloat lastTime = 0.0f;
 //Textures
 Texture brickTexture;
 Texture dirtTexture;
+
+//Light
+Light mainLight;
 
 //GLuint VBO, VAO, IBO, shader, uniformModel, uniformProjection;
 
@@ -80,9 +84,9 @@ void CreateObjects()
 		-1.0f, -1.0f, -1.0f, 0.0f, 0.0f, // Vertex 0: bottom left back
 		 1.0f, -1.0f, -1.0f, 1.0f, 0.0f, // Vertex 1: bottom right back
 		 1.0f, -1.0f,  1.0f, 1.0f, 1.0f, // Vertex 2: bottom right front
-		-1.0f, -1.0f,  1.0f, 0.0f, 1.0f, // Vertex 3: bottom left front
+		-1.0f, -1.0f,  1.0f, 0.5f, 0.5f, // Vertex 3: bottom left front
 		// Apex vertex
-		 0.0f,  1.0f,  0.0f, 0.5f, 0.5f  // Vertex 4: top
+		 0.0f,  1.0f,  0.0f, 0.0f, 1.0f,  // Vertex 4: top
 	};
 
 	unsigned int indices2[] = {
@@ -228,13 +232,17 @@ int main()
 	
 	camera = Camera(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, 0.0f, 5.0f, 0.5f);
 
+	//Texture
 	brickTexture = Texture("Textures/brick.png");
 	brickTexture.LoadTexture();
 	brickTexture = Texture("Textures/dirt.png");
 	brickTexture.LoadTexture();
 
+	//Light
+	mainLight = Light(1.0F,1.0f,1.0f,0.2f);
+
 	
-	GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0;
+	GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0, uniformAmbientIntensity=0, uniformAmbientColour = 0;
 	glm::mat4 projection = glm::perspective(45.0f, (GLfloat)bufferWidth / (GLfloat)bufferHeight, 0.1f, 100.0f);
 
 	// Loop until window closed
@@ -291,6 +299,9 @@ int main()
 		uniformModel = shaderList[0].GetModelLocation();
 		uniformProjection = shaderList[0].GetProjectionLocation();
 		uniformView = shaderList[0].GetViewLocation();
+		uniformAmbientColour = shaderList[0].GetViewAmbientColour();
+		uniformAmbientIntensity = shaderList[0].GetViewAmbientIntensityLocation();
+		mainLight.UseLight(uniformAmbientIntensity, uniformAmbientColour);
 
 		glm::mat4 model(1.0f);
 
