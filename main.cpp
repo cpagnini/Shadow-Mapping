@@ -239,7 +239,7 @@ int main()
 	brickTexture.LoadTexture();
 
 	//Light
-	mainLight = Light(1.0F,1.0f,1.0f,0.2f);
+	mainLight = Light(1.0f,1.0f,1.0f,0.5f);
 
 	
 	GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0, uniformAmbientIntensity=0, uniformAmbientColour = 0;

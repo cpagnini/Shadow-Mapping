@@ -6,8 +6,4 @@ C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(138,18): warning C4244: '=': co
 C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(140,10): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
 C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(141,10): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
 C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(252,15): warning C4244: 'inizializzazione': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(304,47): warning C4244: 'argomento': conversione da 'GLuint' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(304,22): warning C4244: 'argomento': conversione da 'GLuint' a 'GLfloat'. Possibile perdita di dati.
-ShadowMapping\Debug\Camera.obj : warning LNK4042: oggetto specificato più di una volta; occorrenze supplementari ignorate
-LINK : warning LNK4098: la libreria predefinita 'MSVCRT' è in conflitto con l'utilizzo di altre librerie; usare /NODEFAULTLIB:libreria
   OpenGLCourse_1.0.vcxproj -> C:\VSProjects\Projects\OpenGLCourse_1.0\Debug\ShadowMapping.exe
