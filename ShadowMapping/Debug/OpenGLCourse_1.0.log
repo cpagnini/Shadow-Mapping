@@ -1,15 +1,15 @@
 ﻿  main.cpp
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(152,11): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(153,11): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(156,17): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(157,18): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(159,10): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(160,10): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(271,15): warning C4244: 'inizializzazione': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(325,93): warning C4244: 'argomento': conversione da 'GLuint' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(325,68): warning C4244: 'argomento': conversione da 'GLuint' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(325,47): warning C4244: 'argomento': conversione da 'GLuint' a 'GLfloat'. Possibile perdita di dati.
-C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(325,22): warning C4244: 'argomento': conversione da 'GLuint' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(178,11): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(179,11): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(182,17): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(183,18): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(185,10): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(186,10): warning C4244: '=': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(297,15): warning C4244: 'inizializzazione': conversione da 'double' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(351,93): warning C4244: 'argomento': conversione da 'GLuint' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(351,68): warning C4244: 'argomento': conversione da 'GLuint' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(351,47): warning C4244: 'argomento': conversione da 'GLuint' a 'GLfloat'. Possibile perdita di dati.
+C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp(351,22): warning C4244: 'argomento': conversione da 'GLuint' a 'GLfloat'. Possibile perdita di dati.
 ShadowMapping\Debug\Camera.obj : warning LNK4042: oggetto specificato più di una volta; occorrenze supplementari ignorate
 LINK : warning LNK4098: la libreria predefinita 'MSVCRT' è in conflitto con l'utilizzo di altre librerie; usare /NODEFAULTLIB:libreria
   OpenGLCourse_1.0.vcxproj -> C:\VSProjects\Projects\OpenGLCourse_1.0\Debug\ShadowMapping.exe

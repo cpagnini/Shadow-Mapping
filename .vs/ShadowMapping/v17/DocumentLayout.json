@@ -103,8 +103,7 @@
               "RelativeToolTip": "Texture.cpp",
               "ViewState": "AQIAABQAAAAAAAAAAAAswDIAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-08T11:26:30.523Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T11:26:30.523Z"
             },
             {
               "$type": "Document",
@@ -116,8 +115,7 @@
               "RelativeToolTip": "Texture.h",
               "ViewState": "AQIAAAIAAAAAAAAAAAAswAoAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-08T11:23:25.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T11:23:25.351Z"
             },
             {
               "$type": "Document",
@@ -129,8 +127,7 @@
               "RelativeToolTip": "Shader.cpp",
               "ViewState": "AQIAAIoAAAAAAAAAAAAswKEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-07T15:44:46.83Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T15:44:46.83Z"
             },
             {
               "$type": "Document",
@@ -142,8 +139,7 @@
               "RelativeToolTip": "Shader.h",
               "ViewState": "AQIAABAAAAAAAAAAAAAswCcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-07T15:44:10.67Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T15:44:10.67Z"
             },
             {
               "$type": "Document",
@@ -167,8 +163,7 @@
               "RelativeToolTip": "Mesh.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-30T15:45:31.408Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T15:45:31.408Z"
             },
             {
               "$type": "Document",
@@ -180,8 +175,7 @@
               "RelativeToolTip": "Mesh.cpp",
               "ViewState": "AQIAABAAAAAAAAAAAAAswBgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-30T15:42:21.707Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T15:42:21.707Z"
             },
             {
               "$type": "Document",
@@ -191,7 +185,7 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\VSProjects\\Projects\\OpenGLCourse_1.0\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AQIAAGwAAAAAAAAAAAAAAHcAAAAAAAAA",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAswGEAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-06-30T14:17:50.571Z",
               "EditorCaption": ""

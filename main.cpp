@@ -89,34 +89,11 @@ void calcAverageNormals(unsigned int* indices, unsigned int indiceCount, GLfloat
         vertices[nOffset] = vec.x; vertices[nOffset+1] = vec.y; vertices[nOffset+2] = vec.z;
     }
 }
+
+
 void CreateObjects()
 {
-	//unsigned int indices[] = {
-	//	// Sides of the pyramid
-	//	0, 4, 1, // Front-left face
-	//	1, 4, 2, // Front-right face
-	//	2, 4, 3, // Back-right face
-	//	3, 4, 0, // Back-left face
-	//	// Base of the pyramid
-	//	0, 1, 2, // First triangle of the base
-	//	2, 3, 0  // Second triangle of the base
-	//};
 
-	//GLfloat vertices[] = {
-	//	// Base vertices of the pyramid
-	//	// x     y      z     u     v      nx    ny    nz
-	//	-1.0f, -1.0f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, // Vertex 0: bottom left back
-	//	 1.0f, -1.0f, -1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, // Vertex 1: bottom right back
-	//	 1.0f, -1.0f,  1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f, // Vertex 2: bottom right front
-	//	-1.0f, -1.0f,  1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, // Vertex 3: bottom left front
-	//	 0.0f,  1.0f,  0.0f, 0.5f, 0.5f, 0.0f, 0.0f, 0.0f  // Vertex 4: top center
-	//};
-
-	//calcAverageNormals(indices, 18, vertices, 40, 8, 5);
-
-	//Mesh* obj1 = new Mesh();
-	//obj1->CreateMesh(vertices, indices, 40, 18);
-	//meshList.push_back(obj1);
 
 	unsigned int indices[] = {
 		0, 3, 1,
