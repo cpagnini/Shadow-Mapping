@@ -11,6 +11,15 @@ class Camera
 {
 public:
 	Camera();
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="startPosition">The camera's position in the world space</param>
+	/// <param name="startUp">The global upward direction</param>
+	/// <param name="startYaw">defines the camera's direction. LEFT-RIGHT</param>
+	/// <param name="startPitch">camera's direction. UP-DOWN</param>
+	/// <param name="startMoveSpeed">The speed at which the camera moves</param>
+	/// <param name="startTurnSpeed">The speed at which the camera rotates </param>
 	Camera(glm::vec3 startPosition, glm::vec3 startUp, GLfloat startYaw, GLfloat startPitch, GLfloat startMoveSpeed, GLfloat startTurnSpeed);
 
 	void keyControl(bool* keys, GLfloat deltaTime);

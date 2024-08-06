@@ -42,6 +42,12 @@
     <ClCompile Include="Material.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
+    <ClCompile Include="DirectionalLight.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="PointLight.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Mesh.h">
@@ -60,6 +66,15 @@
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="Material.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectionalLight.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="PointLight.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonValues.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>

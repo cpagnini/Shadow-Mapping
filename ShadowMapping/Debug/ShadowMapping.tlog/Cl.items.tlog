@@ -1,9 +1,11 @@
 C:\VSProjects\Projects\OpenGLCourse_1.0\Camera.cpp;C:\VSProjects\Projects\OpenGLCourse_1.0\ShadowMapping\Debug\Camera.obj
 C:\VSProjects\Projects\OpenGLCourse_1.0\Camera.h;C:\VSProjects\Projects\OpenGLCourse_1.0\ShadowMapping\Debug\Camera.obj
+C:\VSProjects\Projects\OpenGLCourse_1.0\DirectionalLight.cpp;C:\VSProjects\Projects\OpenGLCourse_1.0\ShadowMapping\Debug\DirectionalLight.obj
 C:\VSProjects\Projects\OpenGLCourse_1.0\Light.cpp;C:\VSProjects\Projects\OpenGLCourse_1.0\ShadowMapping\Debug\Light.obj
 C:\VSProjects\Projects\OpenGLCourse_1.0\main.cpp;C:\VSProjects\Projects\OpenGLCourse_1.0\ShadowMapping\Debug\main.obj
 C:\VSProjects\Projects\OpenGLCourse_1.0\Material.cpp;C:\VSProjects\Projects\OpenGLCourse_1.0\ShadowMapping\Debug\Material.obj
 C:\VSProjects\Projects\OpenGLCourse_1.0\Mesh.cpp;C:\VSProjects\Projects\OpenGLCourse_1.0\ShadowMapping\Debug\Mesh.obj
+C:\VSProjects\Projects\OpenGLCourse_1.0\PointLight.cpp;C:\VSProjects\Projects\OpenGLCourse_1.0\ShadowMapping\Debug\PointLight.obj
 C:\VSProjects\Projects\OpenGLCourse_1.0\Shader.cpp;C:\VSProjects\Projects\OpenGLCourse_1.0\ShadowMapping\Debug\Shader.obj
 C:\VSProjects\Projects\OpenGLCourse_1.0\Texture.cpp;C:\VSProjects\Projects\OpenGLCourse_1.0\ShadowMapping\Debug\Texture.obj
 C:\VSProjects\Projects\OpenGLCourse_1.0\Window.cpp;C:\VSProjects\Projects\OpenGLCourse_1.0\ShadowMapping\Debug\Window.obj
