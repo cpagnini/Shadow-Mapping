@@ -143,13 +143,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Dependencis\include\glad\src\glad.c" />
     <ClCompile Include="Dependencis\include\glm\detail\glm.cpp" />
     <ClCompile Include="Dependencis\include\glm\glm.cppm" />
     <ClCompile Include="Dependencis\include\src\glad.c" />
+    <ClCompile Include="Framebuffer.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Shadow Mapping.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Dependencis\include\glad\glad.h" />
     <ClInclude Include="Dependencis\include\glad\include\glad\glad.h" />
     <ClInclude Include="Dependencis\include\glad\include\KHR\khrplatform.h" />
@@ -444,6 +449,9 @@
     <ClInclude Include="Dependencis\include\glm\vec4.hpp" />
     <ClInclude Include="Dependencis\include\glm\vector_relational.hpp" />
     <ClInclude Include="Dependencis\include\KHR\khrplatform.h" />
+    <ClInclude Include="Framebuffer.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="Shader.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Dependencis\include\glm\detail\func_common.inl" />
