@@ -12,7 +12,6 @@ public:
 	~Sphere() {}
 	void draw();
 private:
-	unsigned int VAO, VBO, EBO;
 	std::vector<float> vertices;
 	std::vector<unsigned int> indices;
 	Sphere(float radius, unsigned int sectorCount, unsigned int stackCount);

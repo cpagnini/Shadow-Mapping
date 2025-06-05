@@ -22,6 +22,6 @@ public:
     void Draw(Shader& shader);
 
 protected:
-    unsigned int VBO, EBO;
+    unsigned int VAO,VBO, EBO;
     void setupMesh(); 
 };
