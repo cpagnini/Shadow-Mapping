@@ -149,9 +149,10 @@
     <ClCompile Include="Dependencis\include\glm\glm.cppm" />
     <ClCompile Include="Dependencis\include\src\glad.c" />
     <ClCompile Include="Framebuffer.cpp" />
-    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Shadow Mapping.cpp" />
+    <ClCompile Include="Sphere.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
@@ -450,8 +451,9 @@
     <ClInclude Include="Dependencis\include\glm\vector_relational.hpp" />
     <ClInclude Include="Dependencis\include\KHR\khrplatform.h" />
     <ClInclude Include="Framebuffer.h" />
-    <ClInclude Include="Model.h" />
+    <ClInclude Include="Mesh.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="Sphere.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Dependencis\include\glm\detail\func_common.inl" />
@@ -592,9 +594,14 @@
     <None Include="Dependencis\include\glm\gtx\vector_angle.inl" />
     <None Include="Dependencis\include\glm\gtx\vector_query.inl" />
     <None Include="Dependencis\include\glm\gtx\wrap.inl" />
+    <None Include="shaders\basic.frag" />
+    <None Include="shaders\basic.vert" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Dependencis\lib-vc2022\glfw3.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="models\dragon.obj" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

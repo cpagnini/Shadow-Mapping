@@ -39,7 +39,10 @@
     <ClCompile Include="Framebuffer.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
-    <ClCompile Include="Model.cpp">
+    <ClCompile Include="Sphere.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -935,7 +938,10 @@
     <ClInclude Include="Framebuffer.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="Model.h">
+    <ClInclude Include="Sphere.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1354,8 +1360,13 @@
     <None Include="Dependencis\include\glm\gtx\wrap.inl">
       <Filter>File di intestazione</Filter>
     </None>
+    <None Include="shaders\basic.frag" />
+    <None Include="shaders\basic.vert" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Dependencis\lib-vc2022\glfw3.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="models\dragon.obj" />
   </ItemGroup>
 </Project>
