@@ -20,8 +20,8 @@ public:
         float yaw = -90.0f, float pitch = 0.0f);
     
     mat4 GetViewMatrix(); //View matrix
-    void ProcessKeyBoard(Camera_Movement direction, float deltaTime);
-    void ProcessMouseMovement(float xoffset, float yoffset, bool constrainPitch = true);
+    void ProcessKeyboard(Camera_Movement direction, float deltaTime);
+    void ProcessMouseScroll(float xoffset);
     
 
 protected:
@@ -37,8 +37,9 @@ protected:
 
     //Parameters
     float MovementSpeed, MouseSensivity, Zoom;
+    
+    void updateCameraVectors();
 
-private:
-    void updateCamerVectors();
+    
 };
 
