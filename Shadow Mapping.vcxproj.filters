@@ -1366,7 +1366,4 @@
   <ItemGroup>
     <Library Include="Dependencis\lib-vc2022\glfw3.lib" />
   </ItemGroup>
-  <ItemGroup>
-    <Object Include="models\dragon.obj" />
-  </ItemGroup>
 </Project>

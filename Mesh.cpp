@@ -4,10 +4,17 @@
 
 Mesh::Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices)
     : vertices(vertices), indices(indices) {
-    setupMesh();
+    if (!vertices.empty() && !indices.empty()) {
+        setupMesh();
+    }
+    
 }
 
 void Mesh::setupMesh() {
+    if (vertices.empty() || indices.empty()) {
+        // vettori vuoti: skip buffer setup per evitare accesso invalid
+        return;
+    }
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
     glGenBuffers(1, &EBO);

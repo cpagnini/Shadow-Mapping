@@ -23,10 +23,11 @@ public:
     void ProcessKeyboard(Camera_Movement direction, float deltaTime);
     void ProcessMouseScroll(float xoffset);
     
+    vec3 Position;
 
 protected:
     //Attributes
-    vec3 Position;
+    
     vec3 Front;
     vec3 Up;
     vec3 Right;

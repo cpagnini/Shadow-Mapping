@@ -3,14 +3,15 @@
 #include "Mesh.h"
 #include <cmath>
 
-struct Vertex {
-    glm::vec3 Position;
-    glm::vec3 Normal;
-    glm::vec2 TexCoords;
-};
+#include <glm/glm.hpp>
+#include <glm/gtc/constants.hpp>
+
+
+
+
 
 Sphere::Sphere(float radius, unsigned int sectorCount, unsigned int stackCount)
-    : Mesh({},{}) // Mesh initialized with empty vectors
+    : vertices(vertices), indices(indices)// Mesh initialized with empty vectors
 {
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
@@ -19,13 +20,14 @@ Sphere::Sphere(float radius, unsigned int sectorCount, unsigned int stackCount)
     float nx, ny, nz, lengthInv = 1.0f / radius;    // normals
     float s, t;                                      // texture
 
-    float sectorStep = 2 * M_PI / sectorCount;
-    float stackStep = M_PI / stackCount;
+    float pi = glm::pi<float>();
+    float sectorStep = 2 * pi / sectorCount;
+    float stackStep = pi / stackCount;
     float sectorAngle, stackAngle;
 
     for (unsigned int i = 0; i <= stackCount; ++i)
     {
-        stackAngle = M_PI / 2 - i * stackStep;        // from pi/2 to -pi/2
+        stackAngle = pi / 2 - i * stackStep;        // from pi/2 to -pi/2
         xy = radius * cosf(stackAngle);              // r * cos(u)
         z = radius * sinf(stackAngle);               // r * sin(u)
 
@@ -75,4 +77,12 @@ Sphere::Sphere(float radius, unsigned int sectorCount, unsigned int stackCount)
     this->vertices = vertices;
     this->indices = indices;
     this->setupMesh();
+}
+
+void Sphere::draw(Shader& shader)
+{
+    shader.use();
+    glm::mat4 model = glm::mat4(1.0f);
+    shader.setMat4("model", model);
+    Mesh::Draw(shader);
 }
