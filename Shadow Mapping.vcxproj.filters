@@ -45,6 +45,9 @@
     <ClCompile Include="Mesh.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
+    <ClCompile Include="Plane.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dependencis\include\glad\include\glad\glad.h">
@@ -942,6 +945,9 @@
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="Mesh.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>

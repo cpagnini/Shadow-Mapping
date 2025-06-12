@@ -4,7 +4,11 @@
 #include "Shader.h"
 #include "Sphere.h"
 #include "Camera.h"
+#include <glm/ext/matrix_transform.hpp>
 #include <glm/ext/matrix_clip_space.hpp>
+#include "Plane.h"
+
+using namespace glm;
 
 const int WIDTH = 1980;
 const int HEIGHT = 1080;
@@ -43,6 +47,8 @@ int main()
     }
 
     glEnable(GL_DEPTH_TEST);
+    //Plane
+    Plane floor(20.0f, 20.0f);
     //Spheres
     Sphere sphere1(1.0f, 36, 18); // Big
     Sphere sphere2(0.6f, 36, 18); // Medium
@@ -79,11 +85,28 @@ int main()
         shader.setMat4("view", view);
         shader.setMat4("projection", projection);
 
+        float r1 = sphere1.getRadius();
+        float r2 = sphere2.getRadius();
+        float r3 = sphere3.getRadius();
+        std::vector<glm::vec3> spherePositions = {
+            glm::vec3(-2.0f, r1-1.0f, 0.0f), // sinistra
+            glm::vec3(0.0f, r2 - 1.0f, 0.0f), // centro
+            glm::vec3(2.0f, r3 - 1.0f, 0.0f)  // destra
+        };
+        
+        sphere1.draw(shader, spherePositions[0]);
+        
+        sphere2.draw(shader, spherePositions[1]);
+        
+        sphere3.draw(shader, spherePositions[2]);
+
+        
+        glm::mat4 modelFloor = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.0f, 0.0f));
+        shader.setMat4("model", modelFloor);
+        floor.Draw(shader);
 
 
-        sphere1.draw(shader);
-        sphere2.draw(shader);
-        sphere3.draw(shader);
+        
 
         glfwSwapBuffers(window);
         glfwPollEvents();

@@ -1,42 +1,35 @@
 
 #include "Sphere.h"
-#include "Mesh.h"
 #include <cmath>
-
 #include <glm/glm.hpp>
 #include <glm/gtc/constants.hpp>
+#include <glm/ext/matrix_transform.hpp>
 
-
-
-
-
-Sphere::Sphere(float radius, unsigned int sectorCount, unsigned int stackCount)
-    : vertices(vertices), indices(indices)// Mesh initialized with empty vectors
-{
+Sphere::Sphere(float radius, unsigned int sectorCount, unsigned int stackCount) {
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
 
-    float x, y, z, xy;                              // coords
-    float nx, ny, nz, lengthInv = 1.0f / radius;    // normals
-    float s, t;                                      // texture
+    this->radius = radius;
+
+    float x, y, z, xy;
+    float nx, ny, nz, lengthInv = 1.0f / radius;
+    float s, t;
 
     float pi = glm::pi<float>();
     float sectorStep = 2 * pi / sectorCount;
     float stackStep = pi / stackCount;
     float sectorAngle, stackAngle;
 
-    for (unsigned int i = 0; i <= stackCount; ++i)
-    {
-        stackAngle = pi / 2 - i * stackStep;        // from pi/2 to -pi/2
-        xy = radius * cosf(stackAngle);              // r * cos(u)
-        z = radius * sinf(stackAngle);               // r * sin(u)
+    for (unsigned int i = 0; i <= stackCount; ++i) {
+        stackAngle = pi / 2 - i * stackStep;
+        xy = radius * cosf(stackAngle);
+        z = radius * sinf(stackAngle);
 
-        for (unsigned int j = 0; j <= sectorCount; ++j)
-        {
+        for (unsigned int j = 0; j <= sectorCount; ++j) {
             sectorAngle = j * sectorStep;
 
-            x = xy * cosf(sectorAngle);             // r * cos(u) * cos(v)
-            y = xy * sinf(sectorAngle);             // r * cos(u) * sin(v)
+            x = xy * cosf(sectorAngle);
+            y = xy * sinf(sectorAngle);
 
             nx = x * lengthInv;
             ny = y * lengthInv;
@@ -52,14 +45,11 @@ Sphere::Sphere(float radius, unsigned int sectorCount, unsigned int stackCount)
         }
     }
 
-    // Indexes
-    for (unsigned int i = 0; i < stackCount; ++i)
-    {
-        unsigned int k1 = i * (sectorCount + 1);     // stack
+    for (unsigned int i = 0; i < stackCount; ++i) {
+        unsigned int k1 = i * (sectorCount + 1);
         unsigned int k2 = k1 + sectorCount + 1;
 
-        for (unsigned int j = 0; j < sectorCount; ++j, ++k1, ++k2)
-        {
+        for (unsigned int j = 0; j < sectorCount; ++j, ++k1, ++k2) {
             if (i != 0) {
                 indices.push_back(k1);
                 indices.push_back(k2);
@@ -73,16 +63,20 @@ Sphere::Sphere(float radius, unsigned int sectorCount, unsigned int stackCount)
         }
     }
 
-    // Copying inside the mesh
-    this->vertices = vertices;
-    this->indices = indices;
-    this->setupMesh();
+    // Ora la Mesh viene costruita correttamente e chiama setupMesh()
+    mesh = Mesh(vertices, indices);
 }
 
-void Sphere::draw(Shader& shader)
-{
+void Sphere::draw(Shader& shader, glm::vec3 position) {
     shader.use();
     glm::mat4 model = glm::mat4(1.0f);
+    model = glm::translate(model, position);
     shader.setMat4("model", model);
-    Mesh::Draw(shader);
+    mesh.Draw(shader);
 }
+
+float Sphere::getRadius() const
+{
+    return this->radius;
+}
+
