@@ -20,8 +20,24 @@ public:
         float yaw = -90.0f, float pitch = 0.0f);
     
     mat4 GetViewMatrix(); //View matrix
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="direction"></param>
+    /// <param name="deltaTime"></param>
     void ProcessKeyboard(Camera_Movement direction, float deltaTime);
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="xoffset"></param>
     void ProcessMouseScroll(float xoffset);
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="xoffset"></param>
+    /// <param name="yoffset"></param>
+    void ProcessMouseMovement(float xoffset, float yoffset);
     
     vec3 Position;
 

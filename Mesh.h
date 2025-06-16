@@ -16,9 +16,16 @@ public:
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
     Mesh() {};
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="vertices"></param>
+    /// <param name="indices"></param>
     Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices);
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="shader"></param>
     void Draw(Shader& shader);
 
 protected:

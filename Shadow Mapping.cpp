@@ -12,10 +12,51 @@ using namespace glm;
 
 const int WIDTH = 1980;
 const int HEIGHT = 1080;
+float deltaTime, lastFrame;
+bool firstMouse = true;
+Camera camera(glm::vec3(0.0f, 0.0f, 5.0f));
+
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
+}
+
+void processInput(GLFWwindow* window, Camera& camera) {
+
+
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+        camera.ProcessKeyboard(FORWARD, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+        camera.ProcessKeyboard(BACKWARD, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+        camera.ProcessKeyboard(LEFT, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+        camera.ProcessKeyboard(RIGHT, deltaTime);
+}
+
+void mouse_callback(GLFWwindow* window, double xpos, double ypos)
+{
+    static float lastX = WIDTH / 2.0f;
+    static float lastY = HEIGHT / 2.0f;
+
+    if (firstMouse) //Prevent huge calculation of the mouse pos
+    {
+        lastX = xpos;
+        lastY = ypos;
+        firstMouse = false;
+    }
+
+    float xoffset = xpos - lastX;
+    float yoffset = lastY - ypos; //Y position are growing going down
+
+    lastX = xpos;
+    lastY = ypos;
+
+    camera.ProcessMouseMovement(xoffset, yoffset);
 }
 
 int main()
@@ -35,6 +76,8 @@ int main()
         return -1;
     }
     glfwMakeContextCurrent(window);
+
+    
 
     void framebuffer_size_callback(GLFWwindow * window, int width, int height);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
@@ -57,16 +100,27 @@ int main()
     //Shaders
     Shader shader("shaders/basic.vert", "shaders/basic.frag");
 
-    //Camera
-    Camera camera(glm::vec3(0.0f, 0.0f, 5.0f));
 
+    glfwSetCursorPosCallback(window, mouse_callback);
 
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED); // Nasconde il mouse
+
+    
+    
     
 
     //Main loop
     while (!glfwWindowShouldClose(window))
     {
+        float currentFrame = glfwGetTime();
         
+        deltaTime = currentFrame - lastFrame;
+        lastFrame = currentFrame;
+
+        processInput(window, camera);
+
+        
+
 
         //Cleaning screen
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -89,9 +143,9 @@ int main()
         float r2 = sphere2.getRadius();
         float r3 = sphere3.getRadius();
         std::vector<glm::vec3> spherePositions = {
-            glm::vec3(-2.0f, r1-1.0f, 0.0f), // sinistra
-            glm::vec3(0.0f, r2 - 1.0f, 0.0f), // centro
-            glm::vec3(2.0f, r3 - 1.0f, 0.0f)  // destra
+            glm::vec3(-2.0f, r1-1.0f, 0.0f), // left
+            glm::vec3(0.0f, r2 - 1.0f, 0.0f), // middle
+            glm::vec3(2.0f, r3 - 1.0f, 0.0f)  // right
         };
         
         sphere1.draw(shader, spherePositions[0]);

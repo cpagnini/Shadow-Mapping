@@ -2,7 +2,8 @@
 #include <glm/ext/matrix_transform.hpp>
 
 Camera::Camera(glm::vec3 position, glm::vec3 up, float yaw, float pitch)
-    : Front(glm::vec3(0.0f, 0.0f, -1.0f))
+    : Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(2.5f),
+    MouseSensivity(0.1f), Zoom(45.0f)
 {
     Position = position;
     WorldUp = up;
@@ -14,7 +15,7 @@ Camera::Camera(glm::vec3 position, glm::vec3 up, float yaw, float pitch)
 
 mat4 Camera::GetViewMatrix()
 {
-    // guarda in avanti (da Position a Position + Front)
+    // Look forward 
     return lookAt(Position, Position + Front, Up);
 }
 
@@ -50,4 +51,16 @@ void Camera::ProcessMouseScroll(float yoffset)
         Zoom = 1.0f;
     if (Zoom > 45.0f)
         Zoom = 45.0f;
+}
+
+void Camera::ProcessMouseMovement(float xoffset, float yoffset)
+{
+    xoffset *= MouseSensivity;
+    yoffset *= MouseSensivity;
+
+    Yaw += xoffset;
+    Pitch += yoffset;
+
+    // Aggiorna i vettori Front, Right e Up
+    updateCameraVectors();
 }
