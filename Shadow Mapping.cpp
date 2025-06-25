@@ -7,6 +7,7 @@
 #include <glm/ext/matrix_transform.hpp>
 #include <glm/ext/matrix_clip_space.hpp>
 #include "Plane.h"
+#include "ShadowMap.h"
 
 using namespace glm;
 
@@ -99,15 +100,17 @@ int main()
 
     //Shaders
     Shader shader("shaders/basic.vert", "shaders/basic.frag");
+    Shader shadowShader("shaders/shadow.vert", "shaders/shadow.frag");
 
 
     glfwSetCursorPosCallback(window, mouse_callback);
 
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED); // Nasconde il mouse
 
-    
-    
-    
+ 
+    ShadowMap map;
+    map.init(WIDTH, HEIGHT);
+
 
     //Main loop
     while (!glfwWindowShouldClose(window))
@@ -119,8 +122,34 @@ int main()
 
         processInput(window, camera);
 
+        float r1 = sphere1.getRadius();
+        float r2 = sphere2.getRadius();
+        float r3 = sphere3.getRadius();
+
+        std::vector<glm::vec3> spherePositions = {
+        glm::vec3(-2.0f, r1 - 1.0f, 0.0f), // left
+        glm::vec3(0.0f, r2 - 1.0f, 0.0f), // middle
+        glm::vec3(2.0f, r3 - 1.0f, 0.0f)  // right
+        };
+
+
+        glViewport(0, 0, map.getShadowWidth(), map.getShadowHeight());
+        glBindFramebuffer(GL_FRAMEBUFFER, map.depthMapFBO);
+        glClear(GL_DEPTH_BUFFER_BIT);
+        shadowShader.use();
+        shadowShader.setMat4("lightSpaceMatrix", map.getLightSpaceMatrix());
+
+        
         
 
+        sphere1.draw(shadowShader, spherePositions[0]);
+        sphere2.draw(shadowShader, spherePositions[1]);
+        sphere3.draw(shadowShader, spherePositions[2]);
+        glm::mat4 modelFloor = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.0f, 0.0f));
+        shadowShader.setMat4("model", modelFloor);
+        floor.Draw(shadowShader);
+
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
         //Cleaning screen
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -139,15 +168,11 @@ int main()
         shader.setMat4("view", view);
         shader.setMat4("projection", projection);
 
-        float r1 = sphere1.getRadius();
-        float r2 = sphere2.getRadius();
-        float r3 = sphere3.getRadius();
-        std::vector<glm::vec3> spherePositions = {
-            glm::vec3(-2.0f, r1-1.0f, 0.0f), // left
-            glm::vec3(0.0f, r2 - 1.0f, 0.0f), // middle
-            glm::vec3(2.0f, r3 - 1.0f, 0.0f)  // right
-        };
-        
+        shader.setMat4("lightSpaceMatrix", map.getLightSpaceMatrix());
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, map.depthMap);
+        shader.setInt("shadowMap", 1);
+    
         sphere1.draw(shader, spherePositions[0]);
         
         sphere2.draw(shader, spherePositions[1]);
@@ -155,7 +180,7 @@ int main()
         sphere3.draw(shader, spherePositions[2]);
 
         
-        glm::mat4 modelFloor = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.0f, 0.0f));
+        modelFloor = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.0f, 0.0f));
         shader.setMat4("model", modelFloor);
         floor.Draw(shader);
 

@@ -600,6 +600,8 @@
     <None Include="Dependencis\include\glm\gtx\wrap.inl" />
     <None Include="shaders\basic.frag" />
     <None Include="shaders\basic.vert" />
+    <None Include="shaders\shadow.frag" />
+    <None Include="shaders\shadow.vert" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Dependencis\lib-vc2022\glfw3.lib" />
