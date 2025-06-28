@@ -13,6 +13,7 @@ using namespace glm;
 
 const int WIDTH = 1980;
 const int HEIGHT = 1080;
+float fov = 45.0f;
 float deltaTime, lastFrame;
 bool firstMouse = true;
 Camera camera(glm::vec3(0.0f, 0.0f, 5.0f));
@@ -60,6 +61,15 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
     camera.ProcessMouseMovement(xoffset, yoffset);
 }
 
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+{
+    fov -= (float)yoffset;
+    if (fov < 1.0f)
+        fov = 1.0f;
+    if (fov > 45.0f)
+        fov = 45.0f;
+}
+
 int main()
 {
     glfwInit();
@@ -104,6 +114,7 @@ int main()
 
 
     glfwSetCursorPosCallback(window, mouse_callback);
+    glfwSetScrollCallback(window, scroll_callback);
 
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED); // Nasconde il mouse
 
@@ -116,6 +127,7 @@ int main()
 
     while (!glfwWindowShouldClose(window))
     {
+        
         float currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
@@ -133,6 +145,7 @@ int main()
         };
 
         // ---------- 1. SHADOW PASS ----------
+        glCullFace(GL_FRONT);
         glViewport(0, 0, map.getShadowWidth(), map.getShadowHeight());
         glBindFramebuffer(GL_FRAMEBUFFER, map.depthMapFBO);
         glClear(GL_DEPTH_BUFFER_BIT);
@@ -157,6 +170,7 @@ int main()
         floor.Draw(shadowShader);
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
+        glCullFace(GL_BACK);
 
         // ---------- 2. MAIN RENDER PASS ----------
         glViewport(0, 0, WIDTH, HEIGHT);
@@ -168,10 +182,11 @@ int main()
         shader.setVec3("viewPos", camera.Position);
         shader.setVec3("lightColor", glm::vec3(1.0f, 1.0f, 1.0f));
         shader.setVec3("objectColor", glm::vec3(0.8f, 0.2f, 0.3f));
+        shader.setMat4("lightSpaceMatrix", map.getLightSpaceMatrix());
 
         float aspectRatio = static_cast<float>(WIDTH) / HEIGHT;
         glm::mat4 view = camera.GetViewMatrix();
-        glm::mat4 projection = glm::perspective(glm::radians(45.0f), aspectRatio, 0.1f, 100.0f);
+        glm::mat4 projection = glm::perspective(glm::radians(fov), aspectRatio, 0.1f, 100.0f);
 
         shader.setMat4("view", view);
         shader.setMat4("projection", projection);
@@ -196,7 +211,7 @@ int main()
         modelFloor = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.0f, 0.0f));
         shader.setMat4("model", modelFloor);
         floor.Draw(shader);
-
+        
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
