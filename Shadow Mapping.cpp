@@ -113,10 +113,10 @@ int main()
 
 
     //Main loop
+
     while (!glfwWindowShouldClose(window))
     {
         float currentFrame = glfwGetTime();
-        
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
 
@@ -127,31 +127,39 @@ int main()
         float r3 = sphere3.getRadius();
 
         std::vector<glm::vec3> spherePositions = {
-        glm::vec3(-2.0f, r1 - 1.0f, 0.0f), // left
-        glm::vec3(0.0f, r2 - 1.0f, 0.0f), // middle
-        glm::vec3(2.0f, r3 - 1.0f, 0.0f)  // right
+            glm::vec3(-2.0f, r1 - 1.0f, 0.0f), // left
+            glm::vec3(0.0f, r2 - 1.0f, 0.0f),  // middle
+            glm::vec3(2.0f, r3 - 1.0f, 0.0f)   // right
         };
 
-
+        // ---------- 1. SHADOW PASS ----------
         glViewport(0, 0, map.getShadowWidth(), map.getShadowHeight());
         glBindFramebuffer(GL_FRAMEBUFFER, map.depthMapFBO);
         glClear(GL_DEPTH_BUFFER_BIT);
+
         shadowShader.use();
         shadowShader.setMat4("lightSpaceMatrix", map.getLightSpaceMatrix());
 
-        
-        
-
+        glm::mat4 modelSphere = glm::translate(glm::mat4(1.0f), spherePositions[0]);
+        shadowShader.setMat4("model", modelSphere);
         sphere1.draw(shadowShader, spherePositions[0]);
+
+        modelSphere = glm::translate(glm::mat4(1.0f), spherePositions[1]);
+        shadowShader.setMat4("model", modelSphere);
         sphere2.draw(shadowShader, spherePositions[1]);
+
+        modelSphere = glm::translate(glm::mat4(1.0f), spherePositions[2]);
+        shadowShader.setMat4("model", modelSphere);
         sphere3.draw(shadowShader, spherePositions[2]);
+
         glm::mat4 modelFloor = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.0f, 0.0f));
         shadowShader.setMat4("model", modelFloor);
         floor.Draw(shadowShader);
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
-        //Cleaning screen
+        // ---------- 2. MAIN RENDER PASS ----------
+        glViewport(0, 0, WIDTH, HEIGHT);
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -160,40 +168,43 @@ int main()
         shader.setVec3("viewPos", camera.Position);
         shader.setVec3("lightColor", glm::vec3(1.0f, 1.0f, 1.0f));
         shader.setVec3("objectColor", glm::vec3(0.8f, 0.2f, 0.3f));
-        //Set uniforms
-        float aspectRatio = (float)WIDTH / (float)HEIGHT;
+
+        float aspectRatio = static_cast<float>(WIDTH) / HEIGHT;
         glm::mat4 view = camera.GetViewMatrix();
         glm::mat4 projection = glm::perspective(glm::radians(45.0f), aspectRatio, 0.1f, 100.0f);
 
         shader.setMat4("view", view);
         shader.setMat4("projection", projection);
-
         shader.setMat4("lightSpaceMatrix", map.getLightSpaceMatrix());
+
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, map.depthMap);
         shader.setInt("shadowMap", 1);
-    
+
+        glm::mat4 model = glm::translate(glm::mat4(1.0f), spherePositions[0]);
+        shader.setMat4("model", model);
         sphere1.draw(shader, spherePositions[0]);
-        
+
+        model = glm::translate(glm::mat4(1.0f), spherePositions[1]);
+        shader.setMat4("model", model);
         sphere2.draw(shader, spherePositions[1]);
-        
+
+        model = glm::translate(glm::mat4(1.0f), spherePositions[2]);
+        shader.setMat4("model", model);
         sphere3.draw(shader, spherePositions[2]);
 
-        
         modelFloor = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.0f, 0.0f));
         shader.setMat4("model", modelFloor);
         floor.Draw(shader);
 
-
-        
-
         glfwSwapBuffers(window);
         glfwPollEvents();
-
     }
+
 
 
     glfwTerminate();
 
     return 0;
 }
+

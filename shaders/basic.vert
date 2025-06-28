@@ -6,19 +6,14 @@ layout (location = 1) in vec3 aNormal;   // vertex normal
 uniform mat4 model;
 uniform mat4 view;
 uniform mat4 projection;
-uniform mat4 lightSpaceMatrix;
 
 out vec3 FragPos;       // world position
 out vec3 Normal;        // world normal
-out vec4 FragPosLightSpace;
 
 void main()
 {
     FragPos = vec3(model * vec4(aPos, 1.0));       // transforming into world coords
     Normal = mat3(transpose(inverse(model))) * aNormal; // even normals
 
-    FragPosLightSpace = lightSpaceMatrix * vec4(FragPos, 1.0);
-
     gl_Position = projection * view * vec4(FragPos, 1.0); // clip space
-    
 }
