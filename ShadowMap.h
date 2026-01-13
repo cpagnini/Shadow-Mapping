@@ -14,11 +14,13 @@ public:
 	void ConfigureShaderAndMatrices();
 
 	glm::mat4 getLightSpaceMatrix() const;
+	glm::vec3 getLightDir() const;
 	int getShadowWidth() const;
 	int getShadowHeight() const;
 
 protected:
 	glm::mat4 lightSpaceMatrix;
+	glm::vec3 lightDir;
 	unsigned int shadowWidth;
 	unsigned int shadowHeight;
 

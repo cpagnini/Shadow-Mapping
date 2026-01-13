@@ -178,10 +178,13 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         shader.use();
-        shader.setVec3("lightPos", glm::vec3(1.0f, 1.0f, 2.0f));
+        shader.setVec3("lightDir", map.getLightDir());
+        //shader.setVec3("lightPos", glm::vec3(-2.0f, 4.0f, -1.0f));
         shader.setVec3("viewPos", camera.Position);
         shader.setVec3("lightColor", glm::vec3(1.0f, 1.0f, 1.0f));
-        shader.setVec3("objectColor", glm::vec3(0.8f, 0.2f, 0.3f));
+        //shader.setVec3("objectColor", glm::vec3(0.8f, 0.2f, 0.3f));
+        shader.setVec3("floorColor", glm::vec3(0.5f, 0.5f, 0.5f));
+        shader.setVec3("sphereColor", glm::vec3(0.0f, 1.0f, 0.0f));
         shader.setMat4("lightSpaceMatrix", map.getLightSpaceMatrix());
 
         float aspectRatio = static_cast<float>(WIDTH) / HEIGHT;
@@ -196,6 +199,7 @@ int main()
         glBindTexture(GL_TEXTURE_2D, map.depthMap);
         shader.setInt("shadowMap", 1);
 
+        shader.setBool("isFloor", false);
         glm::mat4 model = glm::translate(glm::mat4(1.0f), spherePositions[0]);
         shader.setMat4("model", model);
         sphere1.draw(shader, spherePositions[0]);
@@ -208,6 +212,7 @@ int main()
         shader.setMat4("model", model);
         sphere3.draw(shader, spherePositions[2]);
 
+        shader.setBool("isFloor", true);
         modelFloor = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.0f, 0.0f));
         shader.setMat4("model", modelFloor);
         floor.Draw(shader);
