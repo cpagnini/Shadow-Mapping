@@ -11,7 +11,6 @@ uniform vec3 lightPos;
 uniform vec3 viewPos;
 uniform vec3 lightColor;
 uniform vec3 lightDir;
-uniform int renderMode;
 
 // Material/Object Uniforms
 uniform vec3 floorColor;
@@ -90,7 +89,7 @@ void main()
     } 
     else {
         // (Bias + PCF)
-        float bias = max(0.05 * (1.0 - dot(N, L)), 0.005);
+        float bias = max(0.01 * (1.0 - dot(N, L)), 0.005);
         float shadow = 0.0;
         float currentDepth = projCoords.z;
         vec2 texelSize = 1.0 / textureSize(shadowMap, 0);
