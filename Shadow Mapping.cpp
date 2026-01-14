@@ -199,19 +199,23 @@ int main()
         glBindTexture(GL_TEXTURE_2D, map.depthMap);
         shader.setInt("shadowMap", 1);
 
+        shader.setInt("renderMode", 1);
         shader.setBool("isFloor", false);
         glm::mat4 model = glm::translate(glm::mat4(1.0f), spherePositions[0]);
         shader.setMat4("model", model);
         sphere1.draw(shader, spherePositions[0]);
 
+        shader.setInt("renderMode", 0);
         model = glm::translate(glm::mat4(1.0f), spherePositions[1]);
         shader.setMat4("model", model);
         sphere2.draw(shader, spherePositions[1]);
 
+        shader.setInt("renderMode", 2);
         model = glm::translate(glm::mat4(1.0f), spherePositions[2]);
         shader.setMat4("model", model);
         sphere3.draw(shader, spherePositions[2]);
 
+        shader.setInt("renderMode", 2);
         shader.setBool("isFloor", true);
         modelFloor = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.0f, 0.0f));
         shader.setMat4("model", modelFloor);
