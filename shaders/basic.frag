@@ -23,6 +23,8 @@ uniform sampler2D shadowMap;
 
 out vec4 FragColor;
 
+//Step 0. The Shadow:A point P is in shadow if there is another point Q such that
+//Q is closer to the light than P along the same direction.
 // Helper function to calculate shadow factor based on a given bias
 float CalculateShadow(vec3 projCoords, float bias)
 {

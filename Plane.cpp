@@ -32,3 +32,5 @@ Plane::Plane(float width, float depth) {
     this->indices = indices;
     setupMesh();
 }
+
+

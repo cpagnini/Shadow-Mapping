@@ -13,6 +13,9 @@ public:
     /// <param name="stackCount"></param>
     Sphere(float radius, unsigned int sectorCount, unsigned int stackCount);
     void draw(Shader& shader, glm::vec3 position);
+    
+    void drawR(Shader& shader, glm::mat4 model);
+        
     float getRadius() const;
 
     

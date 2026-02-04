@@ -8,6 +8,8 @@
 #include <glm/ext/matrix_clip_space.hpp>
 #include "Plane.h"
 #include "ShadowMap.h"
+#include "Skybox.h"
+#include "Texture.h"
 
 using namespace glm;
 
@@ -101,6 +103,14 @@ int main()
     }
 
     glEnable(GL_DEPTH_TEST);
+
+    //Texture
+    Texture text;
+    int mapId = text.loadCubeMap();
+    //Skybox
+    Skybox skybox{};
+    skybox.setTexture(mapId);
+    
     //Plane
     Plane floor(20.0f, 20.0f);
     //Spheres
@@ -157,9 +167,16 @@ int main()
         shadowShader.setMat4("model", modelSphere);
         sphere1.draw(shadowShader, spherePositions[0]);
 
-        modelSphere = glm::translate(glm::mat4(1.0f), spherePositions[1]);
-        shadowShader.setMat4("model", modelSphere);
-        sphere2.draw(shadowShader, spherePositions[1]);
+        float time = (float)glfwGetTime();
+
+        glm::mat4 model = glm::mat4(1.0f);
+
+        glm::mat4 modelS2 = glm::mat4(1.0f);
+        modelS2 = glm::rotate(modelS2, time, glm::vec3(0.0f, 1.0f, 0.0f));
+        modelS2 = glm::translate(modelS2, spherePositions[1]);
+        shadowShader.setMat4("model", modelS2);
+        sphere2.drawR(shadowShader, modelS2);
+
 
         modelSphere = glm::translate(glm::mat4(1.0f), spherePositions[2]);
         shadowShader.setMat4("model", modelSphere);
@@ -168,6 +185,10 @@ int main()
         glm::mat4 modelFloor = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.0f, 0.0f));
         shadowShader.setMat4("model", modelFloor);
         floor.Draw(shadowShader);
+
+        glm::mat4 modelSkybox = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.0f, 0.0f));
+        shadowShader.setMat4("model", modelSkybox);
+        skybox.Draw(modelSkybox);
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
         glCullFace(GL_BACK);
@@ -199,14 +220,18 @@ int main()
         glBindTexture(GL_TEXTURE_2D, map.depthMap);
         shader.setInt("shadowMap", 1);
 
+        
+
         shader.setBool("isFloor", false);
-        glm::mat4 model = glm::translate(glm::mat4(1.0f), spherePositions[0]);
+        model = glm::translate(glm::mat4(1.0f), spherePositions[0]);
         shader.setMat4("model", model);
         sphere1.draw(shader, spherePositions[0]);
 
-        model = glm::translate(glm::mat4(1.0f), spherePositions[1]);
-        shader.setMat4("model", model);
-        sphere2.draw(shader, spherePositions[1]);
+        glm::mat4 modelS2_main = glm::mat4(1.0f);
+        modelS2_main = glm::rotate(modelS2_main, time, glm::vec3(0.0f, 1.0f, 0.0f));
+        modelS2_main = glm::translate(modelS2_main, spherePositions[1]);
+        shader.setMat4("model", modelS2_main);
+        sphere2.drawR(shader, modelS2_main);
 
         model = glm::translate(glm::mat4(1.0f), spherePositions[2]);
         shader.setMat4("model", model);

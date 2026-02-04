@@ -75,6 +75,12 @@ void Sphere::draw(Shader& shader, glm::vec3 position) {
     mesh.Draw(shader);
 }
 
+void Sphere::drawR(Shader& shader, glm::mat4 model) {
+    shader.use();
+    shader.setMat4("model", model); 
+    mesh.Draw(shader);
+}
+
 float Sphere::getRadius() const
 {
     return this->radius;

@@ -51,6 +51,12 @@
     <ClCompile Include="ShadowMap.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="Skybox.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dependencis\include\glad\include\glad\glad.h">
@@ -956,6 +962,15 @@
     <ClInclude Include="ShadowMap.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="Skybox.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Dependencis\include\glm\detail\func_common.inl">
@@ -1379,5 +1394,25 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="Dependencis\lib-vc2022\glfw3.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\skybox\back.jpg">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resources\skybox\bottom.jpg">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resources\skybox\front.jpg">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resources\skybox\left.jpg">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resources\skybox\right.jpg">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resources\skybox\top.jpg">
+      <Filter>File di risorse</Filter>
+    </Image>
   </ItemGroup>
 </Project>
