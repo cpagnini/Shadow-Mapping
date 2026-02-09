@@ -105,11 +105,7 @@ int main()
     glEnable(GL_DEPTH_TEST);
 
     //Texture
-    Texture text;
-    int mapId = text.loadCubeMap();
-    //Skybox
-    Skybox skybox{};
-    skybox.setTexture(mapId);
+    Texture sphereTex("resources/Texture/marble.jpg", "diffuse");
     
     //Plane
     Plane floor(20.0f, 20.0f);
@@ -121,7 +117,7 @@ int main()
     //Shaders
     Shader shader("shaders/basic.vert", "shaders/basic.frag");
     Shader shadowShader("shaders/shadow.vert", "shaders/shadow.frag");
-
+    
 
     glfwSetCursorPosCallback(window, mouse_callback);
     glfwSetScrollCallback(window, scroll_callback);
@@ -188,7 +184,7 @@ int main()
 
         glm::mat4 modelSkybox = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.0f, 0.0f));
         shadowShader.setMat4("model", modelSkybox);
-        skybox.Draw(modelSkybox);
+        
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
         glCullFace(GL_BACK);
@@ -200,6 +196,8 @@ int main()
 
         shader.use();
         shader.setVec3("lightDir", map.getLightDir());
+     
+
         //shader.setVec3("lightPos", glm::vec3(-2.0f, 4.0f, -1.0f));
         shader.setVec3("viewPos", camera.Position);
         shader.setVec3("lightColor", glm::vec3(1.0f, 1.0f, 1.0f));
@@ -223,16 +221,22 @@ int main()
         
 
         shader.setBool("isFloor", false);
+        
+
         model = glm::translate(glm::mat4(1.0f), spherePositions[0]);
         shader.setMat4("model", model);
         sphere1.draw(shader, spherePositions[0]);
 
+
+        shader.setBool("useTexture", true); //Texture
+        sphereTex.Bind(0);
         glm::mat4 modelS2_main = glm::mat4(1.0f);
         modelS2_main = glm::rotate(modelS2_main, time, glm::vec3(0.0f, 1.0f, 0.0f));
         modelS2_main = glm::translate(modelS2_main, spherePositions[1]);
         shader.setMat4("model", modelS2_main);
         sphere2.drawR(shader, modelS2_main);
 
+        shader.setBool("useTexture", false); //Texture
         model = glm::translate(glm::mat4(1.0f), spherePositions[2]);
         shader.setMat4("model", model);
         sphere3.draw(shader, spherePositions[2]);

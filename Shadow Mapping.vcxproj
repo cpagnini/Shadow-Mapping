@@ -154,7 +154,6 @@
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Shadow Mapping.cpp" />
     <ClCompile Include="ShadowMap.cpp" />
-    <ClCompile Include="Skybox.cpp" />
     <ClCompile Include="Sphere.cpp" />
     <ClCompile Include="Texture.cpp" />
   </ItemGroup>
@@ -459,7 +458,6 @@
     <ClInclude Include="Plane.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShadowMap.h" />
-    <ClInclude Include="Skybox.h" />
     <ClInclude Include="Sphere.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="Texture.h" />
@@ -612,12 +610,14 @@
     <Library Include="Dependencis\lib-vc2022\glfw3.lib" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\Users\pagni\Downloads\marble.jpg" />
     <Image Include="resources\skybox\back.jpg" />
     <Image Include="resources\skybox\bottom.jpg" />
     <Image Include="resources\skybox\front.jpg" />
     <Image Include="resources\skybox\left.jpg" />
     <Image Include="resources\skybox\right.jpg" />
     <Image Include="resources\skybox\top.jpg" />
+    <Image Include="resources\Texture\marble.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

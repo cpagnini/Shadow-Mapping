@@ -20,6 +20,7 @@ uniform bool isFloor;
 // Textures
 uniform sampler2D diffuseTexture;
 uniform sampler2D shadowMap;
+uniform bool useTexture;
 
 out vec4 FragColor;
 
@@ -39,8 +40,15 @@ float CalculateShadow(vec3 projCoords, float bias)
 
 void main()
 {
+    vec3 objectColor;
     // 1. Setup Base Color and Vectors
-    vec3 color = isFloor ? floorColor : sphereColor;
+    if(useTexture) {
+        objectColor = texture(diffuseTexture, TexCoords).rgb;
+    } else {
+        objectColor = isFloor ? floorColor : sphereColor;
+    }
+   
+    //vec3 color = isFloor ? floorColor : sphereColor;
     vec3 N = normalize(Normal);
     vec3 L = normalize(-lightDir); // Direction FROM fragment TO light
     vec3 V = normalize(viewPos - FragPos);
@@ -86,7 +94,8 @@ void main()
         float diff = max(dot(N, L), 0.0);
         vec3 diffuse = diff * lightColor;
         
-        vec3 result = (ambient + (1.0 - shadow) * diffuse) * color;
+        //vec3 result = (ambient + (1.0 - shadow) * diffuse) * color;
+        vec3 result = (ambient + (1.0 - shadow) * diffuse) * objectColor;
         FragColor = vec4(result, 1.0);
     } 
     else {
@@ -112,7 +121,7 @@ void main()
         if(projCoords.z > 1.0)
             shadow = 0.0;
 
-        vec3 result = (ambient + (1.0 - shadow) * diffuse) * color;
+        vec3 result = (ambient + (1.0 - shadow) * diffuse) * objectColor;
         FragColor = vec4(result, 1.0);
     }
 }

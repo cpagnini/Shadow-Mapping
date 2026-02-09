@@ -1,13 +1,20 @@
-#pragma once
+#ifndef TEXTURE_H
+#define TEXTURE_H
 
-#include <vector>
-using std::vector;
-class Texture
-{
+#include <glad/glad.h>
+#include <string>
+
+class Texture {
 public:
-    std::vector<std::string> faces;
+    unsigned int ID;
+    std::string type;
+    std::string path;
 
-    unsigned int loadCubeMap();
-    
+    // Constructor
+    Texture(const char* imagePath, std::string texType);
+
+    // Activate the texture
+    void Bind(unsigned int unit);
 };
 
+#endif

@@ -54,9 +54,6 @@
     <ClCompile Include="Texture.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
-    <ClCompile Include="Skybox.cpp">
-      <Filter>File di origine</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dependencis\include\glad\include\glad\glad.h">
@@ -968,9 +965,6 @@
     <ClInclude Include="stb_image.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="Skybox.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Dependencis\include\glm\detail\func_common.inl">
@@ -1412,6 +1406,12 @@
       <Filter>File di risorse</Filter>
     </Image>
     <Image Include="resources\skybox\top.jpg">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="..\..\..\Users\pagni\Downloads\marble.jpg">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resources\Texture\marble.jpg">
       <Filter>File di risorse</Filter>
     </Image>
   </ItemGroup>
