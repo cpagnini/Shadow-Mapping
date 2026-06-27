@@ -1,59 +1,58 @@
 # Shadow Mapping - OpenGL
 
-Progetto di Computer Graphics per la realizzazione di ombre in tempo reale tramite **Shadow Mapping**.
+Computer Graphics project implementing real-time shadows using **Shadow Mapping**.
 
-## Tecnologie
+## Technologies
 
 - **OpenGL 3.3** (Core Profile)
 - **GLFW** - Window management
 - **GLAD** - OpenGL loader
 - **GLM** - Math library
 
-## Algoritmo
+## Algorithm
 
-Il progetto implementa la tecnica del **Shadow Mapping** in due passaggi:
+The project implements the **Shadow Mapping** technique in two passes:
 
-1. **Shadow Pass**: Render della scena dalla prospettiva della luce, salvando solo i valori di profondità in una depth texture (FBO)
-2. **Main Pass**: Render della scena dalla camera, confrontando ogni fragment con la depth map per determinare se è in ombra
+1. **Shadow Pass**: Renders the scene from the light's perspective, saving only the depth values into a depth texture (FBO).
+2. **Main Pass**: Renders the scene from the camera's perspective, comparing each fragment with the depth map to determine if it is in shadow.
 
-### Tecniche implementate
+### Implemented Techniques
 
-| Sezione Schermo | Tecnica |
-|-----------------|---------|
-| Sinistra | Depth Map visualization |
-| Centro | Shadow senza bias (shadow acne evidente) |
-| Destra | Shadow con **bias dinamico + PCF** (anti-aliasing ombre) |
+| Screen Section | Technique |
+|----------------|-----------|
+| Left           | Depth Map visualization |
+| Center         | Shadow without bias (evident shadow acne) |
+| Right          | Shadow with **dynamic bias + PCF** (shadow anti-aliasing) |
 
-![Screenshot del progetto](screenshots/image.png)
+![Project Screenshot](screenshots/image.png)
 
-## Controlli
+## Controls
 
-| Tasto | Azione |
-|-------|--------|
-| W/A/S/D | Movimento camera |
-| Mouse | Rotazione vista |
+| Key | Action |
+|-----|--------|
+| W/A/S/D | Camera movement |
+| Mouse | View rotation |
 | Scroll | Zoom |
-| ESC | Chiudi |
+| ESC | Close |
 
-## Struttura
-
-```
+## Structure
 ├── Shadow Mapping.cpp    # Entry point
-├── ShadowMap.*           # Gestione FBO e light matrix
-├── Shader.*              # Compilazione shader
-├── Camera.*              # Camera FPS
-├── Sphere.*              # Generazione procedurale sfere
-├── Plane.*               # Piano pavimento
-├── Texture.*             # Caricamento texture (stb_image)
+├── ShadowMap.* # FBO and light matrix management
+├── Shader.* # Shader compilation
+├── Camera.* # FPS Camera
+├── Sphere.* # Procedural sphere generation
+├── Plane.* # Floor plane
+├── Texture.* # Texture loading (stb_image)
 └── shaders/
-    ├── shadow.*          # Shader per shadow pass
-    └── basic.*           # Shader principale con Blinn-Phong
-```
+├── shadow.* # Shaders for shadow pass
+└── basic.* # Main shader with Blinn-Phong
 
 ## Build
 
-Richiede Visual Studio 2022 con carico di lavoro C++. Le dipendenze sono già incluse in `Dependencis/`.
+Requires Visual Studio 2022 with the C++ workload. Dependencies are already included in `Dependencies/`.
 
-## Screenshot
+## Screenshot & Documentation
 
-La scena mostra 3 sfere di diversa dimensione su un piano, con una texture marmo applicata alla sfera centrale rotante.
+The scene shows 3 spheres of different sizes on a plane, with a marble texture applied to the rotating central sphere.
+
+📄 **Project Report:** You can read the full project documentation here: [Relation.pdf](Relation.pdf)
