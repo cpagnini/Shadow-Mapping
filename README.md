@@ -24,6 +24,8 @@ Il progetto implementa la tecnica del **Shadow Mapping** in due passaggi:
 | Centro | Shadow senza bias (shadow acne evidente) |
 | Destra | Shadow con **bias dinamico + PCF** (anti-aliasing ombre) |
 
+![Screenshot del progetto](screenshots/image.png)
+
 ## Controlli
 
 | Tasto | Azione |
